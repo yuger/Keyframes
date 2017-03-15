@@ -76,6 +76,9 @@ public class MainActivity extends Activity {
     private static final String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private KFImage mKfImage;
 
+    public MainActivity() {
+    }
+
     private void requestPermission() {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -84,9 +87,6 @@ public class MainActivity extends Activity {
             ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
         }
     }
-
-    private String dexOutputDir;
-    private File dir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
